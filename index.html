@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/base.css">
+	<script src='libs/velocity.js'></script>
+	<link rel="stylesheet" href="styles/modal.css">
+</head>
+<body>
+
+<div id="overlay" class="cover blur-in">
+  <div class="content">
+ 		<div class='middle-container'>
+		<div class="middle">
+			<div class="Banner">
+	         	<h2 class="slogan">&lt; Code Link /></h2>
+	         	<h4 class="stuff">Connecting schools with verified and qualified coders.</h4>
+	         	<button class="btn btn-green btn-border-rev" style="z-index: 1000" ><a href="#schools" style='color: inital;'>School</a></button>
+			    <button class="btn btn-blue btn-border-rev" style="z-index: 1000"><a href="#mentors"></a>Coder</button>
+	    	</div>	
+		</div>	
+	</div>
+			    
+	<div class="vid-container" style="width: 100%;">
+		<video id="myVid" autoplay loop preload="auto" style="bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;">
+	    	<source src="assets/clip.webm"/>
+ 		</video>
+	</div>
+  </div>
+</div>
+
+<div class="row pop-up">
+  <div class="box small-6 large-centered">
+    <a href="#" class="close-button">&#10006;</a>
+    <h3>Sign Up</h3>
+    <p><input placeholder="First Name" type="text"></p>
+    <p><input placeholder="Last Name" type="text"></p>
+    <p><input placeholder="email" type="email"></p>
+    <p><input placeholder="upload file" type="text"></p>
+    <a href="#" class="btn btn-green btn-fill-horz">Learn More</a>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+	$(document).ready(function(e){
+		var modal = $('sign-up-modal').hide();
+		var btns = $('btn');		
+		$('.btn').on('click',function(e){
+			$('.pop-up').hide();
+		  	$('.pop-up').fadeIn(1000);		  
+		});
+		$('.close-button').click(function(e){ 
+	     	$('.pop-up').fadeOut(700);
+	      	$('#overlay').removeClass('blur-in');
+	      	$('#overlay').addClass('blur-out');
+     		e.stopPropagation();
+		});
+	});
+</script>
+</body>
+</html>
